@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cifar-cnn-website/static/css/main.281eada6.css",
+    "main.js": "/cifar-cnn-website/static/js/main.325eb4dd.js",
+    "static/media/horsebefore.jpg": "/cifar-cnn-website/static/media/horsebefore.3fd8e3c0f63397aa3486.jpg",
+    "static/media/horseafter.jpg": "/cifar-cnn-website/static/media/horseafter.8e266e2e960db770210d.jpg",
+    "index.html": "/cifar-cnn-website/index.html",
+    "main.281eada6.css.map": "/cifar-cnn-website/static/css/main.281eada6.css.map",
+    "main.325eb4dd.js.map": "/cifar-cnn-website/static/js/main.325eb4dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.281eada6.css",
+    "static/js/main.325eb4dd.js"
+  ]
+}
