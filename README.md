@@ -32,7 +32,7 @@ A web interface for a Convolutional Neural Network (CNN) trained on the CIFAR-10
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/cifar-cnn-website.git
+   git clone https://github.com/JohnLinth/cifar-cnn-website.git
    ```
 
 2. Install dependencies:
