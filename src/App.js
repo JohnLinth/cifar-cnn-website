@@ -116,7 +116,10 @@ const App = () => {
               {t("code_and_dataset_link")}
             </p>
             <div className="flex justify-center pt-2">
-            <button className="flex justify-center items-center px-3 py-1 space-x-2 bg-blue-500 rounded-md shadow-md hover:bg-blue-700">
+            <button 
+              className="flex justify-center items-center px-3 py-1 space-x-2 bg-blue-500 rounded-md shadow-md hover:bg-blue-700"
+              onClick={() => window.open('https://github.com/JohnLinth/cnn-trainer-cifar-10', '_blank')}
+            >
               <GitHubIcon />
               <span>{t("Check out the code")}</span>
             </button>
