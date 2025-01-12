@@ -15,7 +15,7 @@ const App = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [prediction, setPrediction] = useState("");
   const [image, setImage] = useState(null);
-  const [loading, setLoading] = useState(false); // Add loading state
+  const [loading, setLoading] = useState(false);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -30,7 +30,7 @@ const App = () => {
       setLoading(true);
 
       axios
-        .post("http://54.209.44.109:5000/predict", formData, {
+        .post(`${process.env.REACT_APP_API_URL}/predict`, formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
@@ -58,7 +58,6 @@ const App = () => {
           console.error("There was an error making the request:", error);
         })
         .finally(() => {
-          // Set loading to false once the request is done
           setLoading(false);
         });
     }
@@ -67,8 +66,8 @@ const App = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar changeLanguage={changeLanguage} />
-      <div className="flex items-center justify-center mt-12">
-        <div className="w-full max-w-screen-xl p-6 bg-white rounded-lg shadow-lg">
+      <div className="flex justify-center items-center mt-12">
+        <div className="p-6 w-full max-w-screen-xl bg-white rounded-lg shadow-lg">
           <h2 className="mb-6 text-2xl font-bold text-center">
             {t("Object Classifier")}
           </h2>
@@ -81,7 +80,7 @@ const App = () => {
             setImage={setImage}
             setPrediction={setPrediction}
           />
-          <div className="relative flex justify-center border-b-2 border-gray-700 pb-7">
+          <div className="flex relative justify-center pb-7 border-b-2 border-gray-700">
             {image && image.file ? (
               <button
                 className="px-5 py-2 font-bold bg-purple-400 rounded-lg shadow-md hover:bg-purple-500"
@@ -98,7 +97,7 @@ const App = () => {
                 >
                  { t("Predict!")}
                 </button>
-                <div className="absolute hidden px-2 py-1 mb-2 text-xs text-white bg-black rounded bottom-full group-hover:block">
+                <div className="hidden absolute bottom-full px-2 py-1 mb-2 text-xs text-white bg-black rounded group-hover:block">
                   {t("Must select image first!")}
                 </div>
               </div>
@@ -117,7 +116,7 @@ const App = () => {
               {t("code_and_dataset_link")}
             </p>
             <div className="flex justify-center pt-2">
-            <button className="flex items-center justify-center px-3 py-1 space-x-2 bg-blue-500 rounded-md shadow-md hover:bg-blue-700">
+            <button className="flex justify-center items-center px-3 py-1 space-x-2 bg-blue-500 rounded-md shadow-md hover:bg-blue-700">
               <GitHubIcon />
               <span>{t("Check out the code")}</span>
             </button>

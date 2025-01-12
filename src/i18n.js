@@ -24,6 +24,4 @@ i18next.use(initReactI18next).init({
     }
 });
 
-console.log(i18next.t('about')); // Output: Welcome to my Portfolio!
-
 export default i18next;

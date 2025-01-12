@@ -19,10 +19,10 @@ const ImageUpload = ({ setPrediction, model }) => {
     <div className="mb-6">
       <label
         htmlFor="file-upload"
-        className="block w-full h-64 border-2 border-dashed border-blue-500 flex justify-center items-center cursor-pointer bg-blue-200 text-center text-white"
+        className="block flex justify-center items-center w-full h-64 text-center text-white bg-blue-200 border-2 border-blue-500 border-dashed cursor-pointer"
       >
         {image ? (
-          <img src={image} alt="Uploaded" className="h-full object-contain" />
+          <img src={image} alt="Uploaded" className="object-contain h-full" />
         ) : (
           <span>Choose Image</span>
         )}
